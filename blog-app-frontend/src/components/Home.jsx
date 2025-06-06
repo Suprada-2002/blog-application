@@ -16,7 +16,7 @@ function Home() {
         })
     }
 
-    const handleEdit = async(id) => {
+    const handleEdit = (id) => {
        navigate(`/editBlog/${id}`)
     }
 
@@ -31,23 +31,30 @@ function Home() {
         }
     }
 
+    const handleView = (id) => {
+        navigate(`/view/${id}`)
+    }
+
     useEffect(() => {
        fetchData();
     }, [])
 
     return(
         <>
-        <div>
-             <h2 className='text-green-300 '>Blog Application</h2>
-             <a href="/addBlog">Add Blog</a>
+        <div className="flex flex-col gap-3 py-2">
+             <h2 className='w-3/4 text-5xl font-bold md:text-3xl'>Write your Blog Now & let everyone know ! </h2>
+             <p className="text-md font-semibold">Keep youself and Everyone updated.</p>
         </div>
-        <div className="flex flex-col gap-2 ">
+        <div className="flex flex-col gap-2 justify-center item-center py-5">
             {blogs.map((blog) => (
-                <div key={blog.id} className="border-2">
-                    <span>{blog.title}</span>
-                    <button className="px-2 py-2 bg-white text-black" onClick={() => handleEdit(blog.id)}>View</button>
-                    <button className="px-2 py-2 bg-white text-black" onClick={() => handleEdit(blog.id)}>Edit</button>
-                    <button className="px-2 py-2 bg-white text-black" onClick={() => handleDelete(blog.id)}>Delete</button>
+                <div key={blog.id} className="p-4 flex flex-col border-2 border-gray-300">
+                    <span className="text-light text-sm font-normal uppercase text-gray-500">Title: </span>
+                    <h3 className="text-2xl font-semibold md:text-xl">{blog.title}</h3>
+                    <div className="flex gap-3 justify-startmd:justify-end py-4">
+                        <button className="px-3 py-2 bg-gray-300 rounded-md text-black" onClick={() => handleView(blog.id)}>View</button>
+                        <button className="px-3 py-2 bg-gray-300 rounded-md text-black" onClick={() => handleEdit(blog.id)}>Edit</button>
+                        <button className="px-3 py-2 bg-gray-300 rounded-md text-black" onClick={() => handleDelete(blog.id)}>Delete</button>
+                    </div>
                 </div>
             ))}
             
