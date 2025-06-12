@@ -1,8 +1,9 @@
 function Navbar() {
     return(
-        <div className="flex justify-around items-center bg-black text-gray-300 p-4">
+        <div className="flex justify-center gap-3 bg-white text-[#3D3D3D] p-4 shadow-md">
             <h1 className="font-bold text-2xl"><a href="/">BlogApp</a></h1>
-            <a href="/addblog" className="bg-gray-300 text-black py-2 px-3 rounded-2xl font-bold text-xl">+ New</a>
+            <a href="/" className=" text-[#3F7D58] underline font-bold text-lg">Home</a>
+            <a href="/addblog" className=" text-[#3F7D58] underline font-bold text-lg">+ New Blog</a>
         </div>
     )
 }
