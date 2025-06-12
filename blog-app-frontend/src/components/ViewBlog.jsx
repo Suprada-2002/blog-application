@@ -29,10 +29,10 @@ function ViewBlog() {
     }, [id])
 
     return(
-        <div className="flex flex-col justify-center items-center">
-            <h2>{title}</h2>
-            <p>{desc}</p>
-            <button onClick={handleClick}>Back home</button>
+        <div className="grow flex flex-col container mx-auto items-center gap-3 py-10 mb-auto">
+            <h2 className="font-bold text-lg p-2 text-[#3D3D3D]">{title}</h2>
+            <p className="w-full p-3 max-w-[1000px] text-[#3D3D3D] md:p-0">{desc}</p>
+            {/* <button onClick={handleClick}>Back home</button> */}
         </div>
     )
 }
