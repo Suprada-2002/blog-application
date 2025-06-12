@@ -10,7 +10,7 @@ function Home() {
     const fetchData = async() => {
         await getBlogs().then((res) => {
             console.log(res.data);
-            setBlogs(res.data);
+            setBlogs(res.data.reverse());
         }).then((error) => {
             console.log("error: ", error);
         })
@@ -41,19 +41,19 @@ function Home() {
 
     return(
         <>
-        <div className="flex flex-col gap-3 py-2">
-             <h2 className='w-3/4 text-5xl font-bold md:text-3xl'>Write your Blog Now & let everyone know ! </h2>
-             <p className="text-md font-semibold">Keep youself and Everyone updated.</p>
+        <div className="grow flex flex-col mx-auto w-full p-4 md:container md:py-8 lg:py-10">
+             <h2 className='text-lg font-bold text-[#3D3D3D]'>Write your Blog Now & let everyone know ! </h2>
+             <p className="text-sm font-semibold text-[#3F7D58]">Keep youself and Everyone updated.</p>
         </div>
-        <div className="flex flex-col gap-2 justify-center item-center py-5">
+        <div className="flex flex-col container mx-auto gap-2 justify-center item-center mb-10">
             {blogs.map((blog) => (
-                <div key={blog.id} className="p-4 flex flex-col border-2 border-gray-300">
-                    <span className="text-light text-sm font-normal uppercase text-gray-500">Title: </span>
-                    <h3 className="text-2xl font-semibold md:text-xl">{blog.title}</h3>
-                    <div className="flex gap-3 justify-startmd:justify-end py-4">
-                        <button className="px-3 py-2 bg-gray-300 rounded-md text-black" onClick={() => handleView(blog.id)}>View</button>
-                        <button className="px-3 py-2 bg-gray-300 rounded-md text-black" onClick={() => handleEdit(blog.id)}>Edit</button>
-                        <button className="px-3 py-2 bg-gray-300 rounded-md text-black" onClick={() => handleDelete(blog.id)}>Delete</button>
+                <div key={blog.id} className="border border-[#F7D0B1] rounded-md p-3">
+                    <span className="text-light text-sm font-normal uppercase text-[#3D3D3D]">Title: </span>
+                    <h3 className="text-xl text-[#3D3D3D] font-bold md:text-xl">{blog.title}</h3>
+                    <div className="flex justify-start md:justify-end gap-2 py-2">
+                        <button className="px-3 py-1 rounded-xl bg-[#3F7D58] text-white hover:cursor-pointer" onClick={() => handleView(blog.id)}>View</button>
+                        <button className="px-3 py-1 rounded-xl bg-[#3F7D58] text-white" onClick={() => handleEdit(blog.id)}>Edit</button>
+                        <button className="px-3 py-1 rounded-xl bg-[#3F7D58] text-white" onClick={() => handleDelete(blog.id)}>Delete</button>
                     </div>
                 </div>
             ))}
