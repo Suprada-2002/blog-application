@@ -54,9 +54,9 @@ function AddBlog() {
 
     return (
         <>
-        <div className="w-full max-w-md">
-             <div className="text-center">{pageTitle()} </div>
-            <form onSubmit={saveOrEdit} className="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
+        <div className="grow pt-8">
+             <div className="text-center font-bold text-xl text-[#3D3D3D]">{pageTitle()} </div>
+            <form onSubmit={saveOrEdit} className="mx-auto container shadow-md rounded flex flex-col gap-4 p-10">
                 <div className="mb-4">
                     <label className="block text-gray-700 text-sm font-bold mb-2" for="title">Title: </label>
                     <input 
@@ -79,7 +79,8 @@ function AddBlog() {
                         onChange={(e) => setDescription(e.target.value)}
                         />
                     </div>
-                <button class="bg-gray-500  text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">Submit</button>
+                <button class="bg-[#3F7D58] max-w-[100px] rounded-xl text-white font-medium py-2 focus:outline-none focus:shadow-outline">Submit</button>
+    
             </form>
 
         </div>
