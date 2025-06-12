@@ -17,6 +17,9 @@ function App() {
         <Route path='/view/:id' element={<Viewblog />} />
         <Route path='/editBlog/:id' element={<AddBlog />} />
       </Routes>
+      <footer className='z-50 bg-[#F7D0B1] text-[#3D3D3D] shadow-sm p-3 text-center'>
+        <p className='font-bold text-lg'>Made With React.js and Springboot</p>
+      </footer>
      </BrowserRouter>
     </>
   )
