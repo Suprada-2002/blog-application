@@ -1,2 +1,2 @@
 //controller
-package com.example.BlogAppBackedn.controller;
+package com.example.BlogAppBackend.controller;
